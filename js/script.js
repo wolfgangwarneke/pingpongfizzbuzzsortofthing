@@ -3,6 +3,7 @@ var previousAnswer;
 var previousPrevious;
 var answerJuggle;
 var points;
+var pointsSystem = {number: 1, ping: 2, pong: 2, pingpong: 4};
 
 $(document).ready(function() {
 
@@ -57,7 +58,8 @@ $(document).ready(function() {
     answers = answers.splice(1);
     if ((response === answerJuggle) || (response === typeof answerJuggle)) {
       alert('hey you are right');
-      points++;
+      points += pointsSystem[response];
+
     } else {
       alert('hmm that might be wrong there');
     }

@@ -37,7 +37,7 @@ Display next number of sequence and compare against user selection.  If there is
 example: if "pong" was the prediction, but the correct answer was "number", a life is lost.
 
 Tally different score values for each type of button submission.
-example: "Number" is worth one point, "Ping" and "Pong" are worth 2 points, and "Ping Pong" is worth 5 points
+example: "Number" is worth one point, "Ping" and "Pong" are worth 2 points, and "Ping Pong" is worth 4 points
 
 Add display sequence for question flow showing current activity on a main display, previous answers to the left, and future entries (represented by a question mark).  Main display is initially a question mark.
 
