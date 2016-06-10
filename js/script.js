@@ -13,7 +13,7 @@ var startTime;
 var finishTime;
 var completionTime;
 var mostPointsGreatJob = 0;
-var initials;
+var initials = "";
 
 function getWithTheTime() {
   var time = new Date();
@@ -21,7 +21,6 @@ function getWithTheTime() {
   var seconds = time.getSeconds();
   return [minutes, seconds];
 }
-
 
 $(document).ready(function() {
 
@@ -95,7 +94,6 @@ $(document).ready(function() {
         $('#score').text(points);
         getAnswers(15, 3, 5);//first argument sets game length
         currentToAnswer = answers.shift();
-        console.log(currentToAnswer);
         firstTimeFlag = true;
         $('#mainDisplay').removeClass('start');
         break;
@@ -130,7 +128,6 @@ $(document).ready(function() {
       answerJuggle = answers.shift();
       answers = answers.splice(0);
       if ((response === answerJuggle) || (response === typeof answerJuggle)) {
-        console.log('hey you are right');
         points += pointsSystem[response];
         $('#score').text(points);
         $('#mainDisplay').text('yep.');
@@ -143,7 +140,6 @@ $(document).ready(function() {
     } else {
       firstTimeFlag = false;
       if ((response === currentToAnswer) || (response === typeof currentToAnswer)) {
-        console.log('hey you are right');
         points += pointsSystem[response];
         $('#score').text(points);
         $('#mainDisplay').text('yep.');
@@ -200,7 +196,7 @@ $(document).ready(function() {
     if ( points > mostPointsGreatJob ) {
       initials = prompt('you got the high score, what are your initials?');
       mostPointsGreatJob = points;
-      $('#initials').text(initials);
+      $('#initials').text(initials.toUpperCase().slice(2));
       $('#highScore').text(mostPointsGreatJob);
     }
   }
