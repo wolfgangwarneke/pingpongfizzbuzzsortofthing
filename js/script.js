@@ -195,6 +195,7 @@ $(document).ready(function() {
     $('#minutes').text(completionTime[0]);
     $('#seconds').text(completionTime[1]);
     $('#endScreen, #winTime').removeClass("hidden");
+    $('#youLost').addClass('hidden');
     $('#previous, #mainDisplay').txt("");
   }
 
