@@ -92,7 +92,7 @@ $(document).ready(function() {
         startTime = getWithTheTime();
         $('#livesLeft').text(livesLeft-1);
         $('#score').text(points);
-        getAnswers(15, 3, 5);//first argument sets game length
+        getAnswers(25, 3, 5);//first argument sets game length
         currentToAnswer = answers.shift();
         firstTimeFlag = true;
         $('#mainDisplay').removeClass('start');

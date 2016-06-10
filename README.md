@@ -1,6 +1,14 @@
+# Factors of Ping and Pong
 
+#### Predict Multiples of Three and Five, June 10th 2016
 
-SPECIFICATIONS
+#### By Wolfgang Warneke
+
+## Description
+
+Simple game where the user can learn about how the sequence of 3's (ping) and 5's (pong) function together and then play an interactive version where the user will predict which type is next in the sequence.
+
+## Specifications
 
 Prints a list of numbers counting by ones from one until the amount equal to the user input.
 Example input: 4
@@ -48,3 +56,32 @@ example: each second under 4 minutes is worth 1 bonus point
 Displays high score and amount of times the game has been played this session.
 
 Has arrow key functionality for computer use.
+
+## Setup/Installation Requirements
+
+* _This is a great place_
+* _to list setup instructions_
+* _in a simple_
+* _easy-to-understand_
+* _format_
+
+_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+
+## Known Bugs
+
+* Possibly ends game early on occasion
+* Leaves trailing values in main display at end of game
+
+## Support and contact details
+
+wolfgang.warneke@gmail.com
+@wolfgangwarneke on Twitter and Instagram
+
+## Technologies Used
+
+* Javascript
+* jQuery
+
+### License
+
+Copyright (c) 2016 Wolfgang Warneke
