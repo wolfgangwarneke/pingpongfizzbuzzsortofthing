@@ -2,6 +2,7 @@ $(document).ready(function() {
   var answers = [];
   var previousAnswer;
   var previousPrevious;
+  var answerJuggle;
   //game section
   function getAnswers(countTo, firstFactor, secondFactor) {
     answers = [];
@@ -13,41 +14,52 @@ $(document).ready(function() {
       } else if (i % secondFactor === 0) {
         answers.push('pong');
       } else {
-        answers.push('number');
+        answers.push(i);
       }
     }
   };
 
   //start game
   //get array for game iteration values
-  var gameCounter = 0;//necessary?
+  var currentToAnswer;//necessary?
   $('.start').click(function() {
     getAnswers(100, 3, 5);
-    console.log(answers.length);
+    currentToAnswer = answers.shift();
+    console.log(currentToAnswer);
   });
 
   //get input from controls
-  var answerIs = "";
+  var userPrediction = "";
   var controlToggle = "";
   $('#numberButton').click(function() {
-    answerIs = "number";
-    console.log(answerIs);
+    userPrediction = "number";
+    checkAnswer(userPrediction);
   });
   $('#pingButton').click(function() {
-    answerIs = "ping";
-    console.log(answerIs);
+    userPrediction = "ping";
+    checkAnswer(userPrediction);
   });
   $('#pongButton').click(function() {
-    answerIs = "pong";
-    console.log(answerIs);
+    userPrediction = "pong";
+    checkAnswer(userPrediction);
   });
   $('#pingpongButton').click(function() {
-    answerIs = "pingpong";
-    console.log(answerIs);
+    userPrediction = "pingpong";
+    checkAnswer(userPrediction);
   });
 
-  //display next iteration
+  //checkAnswer
+  function checkAnswer(response) {
+    answerJuggle = answers.shift();
+    answers = answers.splice(1);
+    if ((response === answerJuggle) || (response === typeof answerJuggle)) {
+      alert('hey you are right');
+    } else {
+      alert('hmm that might be wrong there');
+    }
+  }
 
+  //display next iteration
 
 
 
