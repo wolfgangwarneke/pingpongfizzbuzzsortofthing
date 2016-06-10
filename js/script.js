@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('#goTutorial').click(function() {
+    $('#homePage, #tutorialPage1').toggleClass('hidden');
+  });
   $('#userNumber').submit(function(event) {
     $('#tutorialPrint').empty();
     var howHighToCount = parseInt($('#input').val());
@@ -23,5 +26,12 @@ $(document).ready(function() {
     tutorialCounter(howHighToCount, 3, 5);
     $('#tutorialPage1, #tutorialPage2').toggleClass('hidden');
     event.preventDefault();
+  });
+  $('#goBackHome').click(function() {
+    $('#homepage, #tutorialPage2').toggleClass('hidden');
+  });
+  $('.playTheGame').click(function() {
+    $('#homePage, #tutorialPage1, #tutorialPage2').addClass('hidden');
+    $('#gamePage').removeClass('hidden');
   });
 });//end document ready

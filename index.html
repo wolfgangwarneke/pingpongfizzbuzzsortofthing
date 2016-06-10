@@ -10,7 +10,18 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="tutorialPage1">
+    <div id="homePage">
+      <h1>The home page</h1>
+      <div>
+        <div id="goTutorial">
+          <h4>TUTORIAL</h4>
+        </div>
+        <div class="playTheGame">
+          <h4>PLAY GAME</h4>
+        </div>
+      </div>
+    </div>
+    <div id="tutorialPage1" class="hidden">
       <h4>Tutorial:</h4>
       <p>Welcome! Ping pong counts by ones, but the two multiples will change the number to "ping" or "pong".  If the number has both multiples it becomes both "ping" and "pong"... Pingpong! In arcade mode  of Ping Pong Pingpong you will navigate your way through the game by predicting whether the next number will actually be a number or whether it will change to "ping", "pong", "pingpong".  But don't get it wrong or you'll lose a life! (Don't worry you get 3.)</p>
       <form id="userNumber">
@@ -21,6 +32,9 @@
     <div id="tutorialPage2" class="hidden">
       <ul id="tutorialPrint">
       </ul>
+    </div>
+    <div id="gamePage" class="hidden">
+      <h1>The game page</h1>
     </div>
   </body>
 </html>
