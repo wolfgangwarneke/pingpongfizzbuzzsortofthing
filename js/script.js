@@ -61,9 +61,10 @@ $(document).ready(function() {
       console.log('hey you are right');
       points += pointsSystem[response];
       $('#score').text(points);
-
+      $('#mainDisplay').text('yep.')
     } else {
       console.log('hmm that might be wrong there');
+      $('#mainDisplay').text('nah.')
     }
   }
 
