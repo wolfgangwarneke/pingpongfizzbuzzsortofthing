@@ -74,7 +74,6 @@ $(document).ready(function() {
       console.log('hmm that might be wrong there');
       $('#mainDisplay').text('nah.');
     }
-    // $('#previousPrevious').text($('#previous').val());
     $('#previous').text(answerJuggle);
   } else {
     firstTimeFlag = false;
