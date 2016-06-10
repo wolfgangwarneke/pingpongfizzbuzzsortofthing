@@ -30,41 +30,67 @@ body {
   text-align: center;
 }
 
+
+/*/////score bar*/
+#scoreBar p {
+  display: inline-block;
+  width: 30%;
+  margin: 0 0 10px 0;
+}
+
+
 /*/////controls*/
 #controls {
   margin: auto;
 }
 
+#numberButton,
+#pingButton,
+#pongButton,
+#pingpongButton {
+  background-color: #8876BA;
+  border: 2px solid #000;
+}
+
 #numberButton {
   width: 90%;
-  padding: 5%;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 0;
+  border-bottom: 1px solid #000;
+}
+
+#numberButton h4 {
+  margin: 0;
 
 }
 
 #middleButtons {
+  width: 90%;
   margin: auto;
 }
 
 #pingButton {
+  width: 49%;
   display: inline-block;
   float: left;
-  width: 40%;
-  margin-left: 4%;
-  margin-right: 1%;
-  padding: 2.5%;
+  margin: 0;
+  border: none;
+  border-right: 1px solid #000;
 }
 
 #pongButton {
+  width: 49%;
   display: inline-block;
   float: left;
-  width: 40%;
-  margin-left: 1%;
-  margin-right: 4%;
-  padding: 2.5%;
+  margin: 0;
+  border: none;
+  border-left: 1px solid #000;
 }
 
 #pingpongButton {
+  clear: left;
   width: 90%;
-  padding: 5%;
+  margin: auto;
 
 }
