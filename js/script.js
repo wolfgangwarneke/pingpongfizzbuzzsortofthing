@@ -1,8 +1,11 @@
+var answers = [];
+var previousAnswer;
+var previousPrevious;
+var answerJuggle;
+var points;
+
 $(document).ready(function() {
-  var answers = [];
-  var previousAnswer;
-  var previousPrevious;
-  var answerJuggle;
+
   //game section
   function getAnswers(countTo, firstFactor, secondFactor) {
     answers = [];
@@ -21,8 +24,8 @@ $(document).ready(function() {
 
   //start game
   //get array for game iteration values
-  var currentToAnswer;//necessary?
   $('.start').click(function() {
+    points = 0;
     getAnswers(100, 3, 5);
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
@@ -54,6 +57,7 @@ $(document).ready(function() {
     answers = answers.splice(1);
     if ((response === answerJuggle) || (response === typeof answerJuggle)) {
       alert('hey you are right');
+      points++;
     } else {
       alert('hmm that might be wrong there');
     }
