@@ -12,6 +12,8 @@ var livesLeft;
 var startTime;
 var finishTime;
 var completionTime;
+var mostPointsGreatJob = 0;
+var initials;
 
 function getWithTheTime() {
   var time = new Date();
@@ -118,6 +120,7 @@ $(document).ready(function() {
     $('#livesLeft').text(0);
     startTime = "";
     alert('it is over now');
+    highScore();
   }
 
   function winning() {
@@ -130,9 +133,17 @@ $(document).ready(function() {
     }
     completionTime = [finishTime[0]-startTime[0], finishTime[1]-startTime[1]]
     alert('You made it through! Congrats! You completed the game in ' + completionTime[0] + " minutes and " + completionTime[1] + " seconds.");
+    highScore();
   }
 
-
+  function highScore() {
+    if ( points > mostPointsGreatJob ) {
+      initials = prompt('you got the high score, what are your initials?');
+      mostPointsGreatJob = points;
+      $('#initials').text(initials);
+      $('#highScore').text(mostPointsGreatJob);
+    }
+  }
 
 
 
