@@ -1,4 +1,29 @@
 $(document).ready(function() {
+
+//game section
+
+  //get input from controls
+  var answerIs = "";
+  $('#numberButton').click(function() {
+    answerIs = "number";
+    console.log(answerIs);
+  });
+  $('#pingButton').click(function() {
+    answerIs = "ping";
+    console.log(answerIs);
+  });
+  $('#pongButton').click(function() {
+    answerIs = "pong";
+    console.log(answerIs);
+  });
+  $('#pingpongButton').click(function() {
+    answerIs = "pingpong";
+    console.log(answerIs);
+  });
+
+
+
+///tutorial section
   $('#goTutorial').click(function() {
     $('#homePage, #tutorialPage1').toggleClass('hidden');
   });
@@ -34,4 +59,4 @@ $(document).ready(function() {
     $('#homePage, #tutorialPage1, #tutorialPage2').addClass('hidden');
     $('#gamePage').removeClass('hidden');
   });
-});//end document ready
+});
