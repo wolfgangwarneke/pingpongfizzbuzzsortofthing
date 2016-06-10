@@ -32,8 +32,8 @@ $(document).ready(function() {
   //get array for game iteration values
   $('.start').click(function() {
     points = 0;
-    livesLeft = 3;
-    $('#livesLeft').text(livesLeft);
+    livesLeft = 4;
+    $('#livesLeft').text(livesLeft-1);
     $('#score').text(points);
     getAnswers(100, 3, 5);
     currentToAnswer = answers.shift();
@@ -74,7 +74,7 @@ $(document).ready(function() {
         $('#mainDisplay').text('yep.');
       } else {
         livesLeft -= 1;
-        $('#livesLeft').text(livesLeft);
+        $('#livesLeft').text(livesLeft-1);
         $('#mainDisplay').text('nah.');
       }
       $('#previous').text(answerJuggle);
@@ -88,7 +88,7 @@ $(document).ready(function() {
       } else {
         // console.log('hmm that might be wrong there');
         livesLeft -= 1;
-        $('#livesLeft').text(livesLeft);
+        $('#livesLeft').text(livesLeft-1);
         $('#mainDisplay').text('nah.');
       }
       $('#previous').text(currentToAnswer);
@@ -99,6 +99,7 @@ $(document).ready(function() {
   }
 
   function endOfGame() {
+    $('#livesLeft').text(0);
     alert('it is over now');
   }
 
