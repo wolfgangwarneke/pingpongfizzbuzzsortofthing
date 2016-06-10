@@ -170,6 +170,7 @@ $(document).ready(function() {
     $('#youLost').removeClass('hidden');
     $('#winTime').addClass('hidden');
     $('#endScreen').removeClass("hidden");
+
   }
 
   function winning() {
@@ -182,7 +183,11 @@ $(document).ready(function() {
       finishTime[1] += 60;
     }
     completionTime = [finishTime[0]-startTime[0], finishTime[1]-startTime[1]]
-    // alert('You made it through! Congrats! You completed the game in ' + completionTime[0] + " minutes and " + completionTime[1] + " seconds.");
+    var totalSeconds = completionTime[0] * 60 + completionTime[1];
+    if (totalSeconds < 100) {
+      points += 100 - totalSeconds;
+    }
+    $('#score').text(points);
     highScore();
 
     $('#endMessage h2').text('woohoo');
@@ -190,13 +195,14 @@ $(document).ready(function() {
     $('#minutes').text(completionTime[0]);
     $('#seconds').text(completionTime[1]);
     $('#endScreen, #winTime').removeClass("hidden");
+    $('#previous, #mainDisplay').txt("");
   }
 
   function highScore() {
     if ( points > mostPointsGreatJob ) {
       initials = prompt('you got the high score, what are your initials?');
       mostPointsGreatJob = points;
-      $('#initials').text(initials.toUpperCase().slice(2));
+      $('#initials').text(initials.toUpperCase().substring(0,3));
       $('#highScore').text(mostPointsGreatJob);
     }
   }
