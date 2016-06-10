@@ -48,6 +48,7 @@ $(document).ready(function() {
   //get array for game iteration values
   $('.start').click(function() {
     $('#controls').toggleClass('hideControls');
+    $('#bigOlStartButton, #endScreen').addClass('hidden');
     points = 0;
     livesLeft = 4;
     startTime = getWithTheTime();
@@ -85,6 +86,8 @@ $(document).ready(function() {
   function moveSomething(e) {
     switch(e.keyCode) {
       case 13://enter
+        $('#controls').toggleClass('hideControls');
+        $('#bigOlStartButton, #endScreen').addClass('hidden');
         points = 0;
         livesLeft = 4;
         startTime = getWithTheTime();
@@ -166,6 +169,11 @@ $(document).ready(function() {
     startTime = "";
     alert('it is over now');
     highScore();
+    $('#endMessage h2').text('oh snap');
+    $('#endPoints h2 span').text(points);
+    $('#youLost').removeClass('hidden');
+    $('#winTime').addClass('hidden');
+    $('#endScreen').removeClass("hidden");
   }
 
   function winning() {
@@ -178,8 +186,14 @@ $(document).ready(function() {
       finishTime[1] += 60;
     }
     completionTime = [finishTime[0]-startTime[0], finishTime[1]-startTime[1]]
-    alert('You made it through! Congrats! You completed the game in ' + completionTime[0] + " minutes and " + completionTime[1] + " seconds.");
+    // alert('You made it through! Congrats! You completed the game in ' + completionTime[0] + " minutes and " + completionTime[1] + " seconds.");
     highScore();
+
+    $('#endMessage h2').text('woohoo');
+    $('#endPoints h2 span').text(points);
+    $('#minutes').text(completionTime[0]);
+    $('#seconds').text(completionTime[1]);
+    $('#endScreen, #winTime').removeClass("hidden");
   }
 
   function highScore() {
