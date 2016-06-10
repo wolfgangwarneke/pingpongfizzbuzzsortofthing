@@ -5,11 +5,11 @@ $(document).ready(function() {
     numbersToPrint = [];
     for (i = 1; i <= countTo; i++) {
       if ((i % firstFactor === 0) && (i % secondFactor === 0)) {
-        numbersToPrint.push('Pingpong');
+        numbersToPrint.push('<em>Pingpong</em> ('+i+')');
       } else if (i % firstFactor === 0) {
-        numbersToPrint.push('Ping');
+        numbersToPrint.push('<em>Ping</em> ('+i+')');
       } else if (i % secondFactor === 0) {
-        numbersToPrint.push('Pong');
+        numbersToPrint.push('<em>Pong</em> ('+i+')');
       } else {
         numbersToPrint.push(i);
       }

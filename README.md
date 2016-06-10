@@ -23,6 +23,9 @@ Display output sequence on new screen.
 Adds start tutorial text to accompany input to teach user how to use the game
 Example text: Welcome! Ping pong counts by ones, but the two multiples will change the number to "ping" or "pong".  If the number has both multiples it becomes both "ping" and "pong"... Pingpong! In arcade mode  of Ping Pong Pingpong you will navigate your way through the game by predicting whether the next number will actually be a number or whether it will change to "ping", "pong", "pingpong".  But don't get it wrong or you'll lose a life! (Don't worry you get 3.)
 
+Has comments annotating the outputted sequence to further demonstrate the concept for the user.
+example: See? Each red ping represent a multiple of three,
+
 Adds start menu with choices for tutorial or to play the game.
 
 Display  game content in an organized and scalable way for mobile devices.
@@ -34,7 +37,7 @@ Display next number of sequence and compare against user selection.  If there is
 example: if "pong" was the prediction, but the correct answer was "number", a life is lost.
 
 Tally different score values for each type of button submission.
-example: "Number" is worth one point, "Ping" and "Pong" are worth 2 pts, and "Ping Pong" is worth 5pts
+example: "Number" is worth one point, "Ping" and "Pong" are worth 2 points, and "Ping Pong" is worth 5 points
 
 Add display sequence for question flow showing current activity on a main display, previous answers to the left, and future entries (represented by a question mark).  Main display is initially a question mark.
 
