@@ -78,6 +78,29 @@ $(document).ready(function() {
       checkAnswer(userPrediction);
     });
 
+  //get input from arrow keys
+  window.addEventListener("keydown", moveSomething, false);
+  function moveSomething(e) {
+    switch(e.keyCode) {
+      case 38://up
+        userPrediction = "number";
+        checkAnswer(userPrediction);
+        break;
+      case 37://left
+        userPrediction = "ping";
+        checkAnswer(userPrediction);
+        break;
+      case 39://right
+        userPrediction = "pong";
+        checkAnswer(userPrediction);
+        break;
+      case 40://down
+        userPrediction = "pingpong";
+        checkAnswer(userPrediction);
+        break;
+    }
+  }
+
 
 
   //checkAnswer
