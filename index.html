@@ -5,6 +5,8 @@
     <title>PING to the PONG to the PINGPONG</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Great+Vibes|Jura' rel='stylesheet' type='text/css'>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -21,7 +23,8 @@
     </div>
     <div id="tutorialPage1" class="hidden">
       <h4>Tutorial:</h4>
-      <p>Welcome! Ping pong counts by ones, but the two multiples will change the number to "ping" or "pong".  If the number has both multiples it becomes both "ping" and "pong"... Pingpong! In arcade mode  of Ping Pong Pingpong you will navigate your way through the game by predicting whether the next number will actually be a number or whether it will change to "ping", "pong", "pingpong".  But don't get it wrong or you'll lose a life! (Don't worry you get 3.)</p>
+      <p>Welcome! Ping pong counts by ones, but the two multiples will change the number to "ping" or "pong".  If the number has both multiples it becomes both "ping" and "pong"... Pingpong! In our GAME MODE of Ping Pong Pingpong you will navigate your way through the game by predicting whether the next number will actually be a number or whether it will change to "ping", "pong", "pingpong".  But don't get it wrong or you'll lose a life! (Don't worry you get 3.)</p>
+      <p>Currently there is only one 'level' of this game where we have multiples of three and have.  Some numbers are multiples of three, some of five, and some are both.  Pick a number to count to to see what the sequence of the game will be like!
       <form id="userNumber">
         <input type="text" id="input">
         <input type="submit">
@@ -36,7 +39,7 @@
     </div>
     <div id="gamePage" class="hidden">
       <div id="gameHeader">
-        <h1 class="start">PINGPONG</h1>
+        <h1 class="start">Pingpong</h1>
       </div>
       <div id="scoreBar">
         <p>Score: <span id="score"></span></p>
@@ -55,18 +58,18 @@
       </div>
       <div id="controls" class="hideControls">
         <div id="numberButton">
-          <h4>Number</h4>
+          <img src="img/number.jpg" alt="ping" />
         </div>
         <div id="middleButtons">
           <div id="pingButton">
-            <h4>Ping</h4>
+            <img src="img/ping.jpg" alt="ping" />
           </div>
           <div id="pongButton">
-            <h4>Pong</h4>
+            <img src="img/pong.jpg" alt="ping" />
           </div>
         </div>
         <div id="pingpongButton">
-          <h4>Pingpong</h4>
+          <img src="img/pingpong.jpg" alt="ping" />
         </div>
       </div>
       <div id="bigOlStartButton" class="start">
