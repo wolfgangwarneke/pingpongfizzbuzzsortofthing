@@ -25,6 +25,9 @@ function getWithTheTime() {
 
 $(document).ready(function() {
 
+  //navigatie to game section
+
+
   //game section
   function getAnswers(countTo, firstFactor, secondFactor) {
     answers = [];
@@ -53,7 +56,7 @@ $(document).ready(function() {
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
     firstTimeFlag = true;
-    $('.start').removeClass('start');
+    $('#mainDisplay').removeClass('start');
   });
 
   //get input from controls
