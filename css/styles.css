@@ -7,7 +7,9 @@ body {
   display: none;
 }
 
-
+.hideControls {
+  display: none;
+}
 
 /*TUTORIAL PAGE 2*/
 #tutorialPage2 li:nth-child(3n+3) {

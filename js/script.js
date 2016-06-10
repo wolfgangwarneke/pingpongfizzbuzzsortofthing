@@ -47,12 +47,14 @@ $(document).ready(function() {
   //start game
   //get array for game iteration values
   $('.start').click(function() {
+    $('#controls').toggleClass('hideControls');
     points = 0;
     livesLeft = 4;
     startTime = getWithTheTime();
+    $('#previous').text("");
     $('#livesLeft').text(livesLeft-1);
     $('#score').text(points);
-    getAnswers(25, 3, 5);//first argument sets game length
+    getAnswers(15, 3, 5);//first argument sets game length
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
     firstTimeFlag = true;
@@ -159,6 +161,7 @@ $(document).ready(function() {
   }
 
   function endOfGame() {
+    $('#controls').toggleClass('hideControls');
     $('#livesLeft').text(0);
     startTime = "";
     alert('it is over now');
@@ -166,6 +169,7 @@ $(document).ready(function() {
   }
 
   function winning() {
+    $('#controls').toggleClass('hideControls');
     finishTime = getWithTheTime();
     if (startTime[0] > finishTime[0]) {
       finishTime[0] += 60;
