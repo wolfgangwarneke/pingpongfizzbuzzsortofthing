@@ -27,6 +27,7 @@ $(document).ready(function() {
   //get array for game iteration values
   $('.start').click(function() {
     points = 0;
+    $('#score').text(points);
     getAnswers(100, 3, 5);
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
@@ -57,12 +58,12 @@ $(document).ready(function() {
     answerJuggle = answers.shift();
     answers = answers.splice(1);
     if ((response === answerJuggle) || (response === typeof answerJuggle)) {
-      alert('hey you are right');
+      console.log('hey you are right');
       points += pointsSystem[response];
       $('#score').text(points);
 
     } else {
-      alert('hmm that might be wrong there');
+      console.log('hmm that might be wrong there');
     }
   }
 
