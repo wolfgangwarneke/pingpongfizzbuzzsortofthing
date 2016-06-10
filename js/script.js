@@ -21,6 +21,7 @@ $(document).ready(function() {
       });
     }
     tutorialCounter(howHighToCount, 3, 5);
+    $('#tutorialPage1, #tutorialPage2').toggleClass('hidden');
     event.preventDefault();
   });
 });//end document ready
