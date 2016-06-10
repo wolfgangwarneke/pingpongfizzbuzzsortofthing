@@ -1,9 +1,34 @@
 $(document).ready(function() {
+  var answers = [];
+  var previousAnswer;
+  var previousPrevious;
+  //game section
+  function getAnswers(countTo, firstFactor, secondFactor) {
+    answers = [];
+    for (i = 1; i <= countTo; i++) {
+      if ((i % firstFactor === 0) && (i % secondFactor === 0)) {
+        answers.push('pingpong');
+      } else if (i % firstFactor === 0) {
+        answers.push('ping');
+      } else if (i % secondFactor === 0) {
+        answers.push('pong');
+      } else {
+        answers.push('number');
+      }
+    }
+  };
 
-//game section
+  //start game
+  //get array for game iteration values
+  var gameCounter = 0;//necessary?
+  $('.start').click(function() {
+    getAnswers(100, 3, 5);
+    console.log(answers.length);
+  });
 
   //get input from controls
   var answerIs = "";
+  var controlToggle = "";
   $('#numberButton').click(function() {
     answerIs = "number";
     console.log(answerIs);
@@ -20,6 +45,10 @@ $(document).ready(function() {
     answerIs = "pingpong";
     console.log(answerIs);
   });
+
+  //display next iteration
+
+
 
 
 
