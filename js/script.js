@@ -8,6 +8,7 @@ var points;
 var pointsSystem = {number: 1, ping: 2, pong: 2, pingpong: 4};
 var firstTimeFlag;
 var counter;
+var livesLeft;
 
 $(document).ready(function() {
 
@@ -32,6 +33,8 @@ $(document).ready(function() {
   //get array for game iteration values
   $('.start').click(function() {
     points = 0;
+    livesLeft = 3;
+    $('#livesLeft').text(livesLeft);
     $('#score').text(points);
     getAnswers(100, 3, 5);
     currentToAnswer = answers.shift();
@@ -63,7 +66,6 @@ $(document).ready(function() {
   function checkAnswer(response) {
     if (!firstTimeFlag) {
     answerJuggle = answers.shift();
-    alert(answerJuggle);
     answers = answers.splice(0);
     if ((response === answerJuggle) || (response === typeof answerJuggle)) {
       console.log('hey you are right');
@@ -83,8 +85,11 @@ $(document).ready(function() {
       $('#score').text(points);
       $('#mainDisplay').text('yep.');
     } else {
-      console.log('hmm that might be wrong there');
+      // console.log('hmm that might be wrong there');
+      livesLeft -= 1;
+      $('#livesLeft').text(livesLeft);
       $('#mainDisplay').text('nah.');
+
     }
     $('#previous').text(currentToAnswer);
   }
