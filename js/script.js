@@ -59,6 +59,7 @@ $(document).ready(function() {
     if ((response === answerJuggle) || (response === typeof answerJuggle)) {
       alert('hey you are right');
       points += pointsSystem[response];
+      $('#score').text(points);
 
     } else {
       alert('hmm that might be wrong there');
