@@ -52,7 +52,7 @@ $(document).ready(function() {
     startTime = getWithTheTime();
     $('#livesLeft').text(livesLeft-1);
     $('#score').text(points);
-    getAnswers(15, 3, 5);//first argument sets game length
+    getAnswers(25, 3, 5);//first argument sets game length
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
     firstTimeFlag = true;
@@ -82,19 +82,35 @@ $(document).ready(function() {
   window.addEventListener("keydown", moveSomething, false);
   function moveSomething(e) {
     switch(e.keyCode) {
+      case 13://enter
+        points = 0;
+        livesLeft = 4;
+        startTime = getWithTheTime();
+        $('#livesLeft').text(livesLeft-1);
+        $('#score').text(points);
+        getAnswers(15, 3, 5);//first argument sets game length
+        currentToAnswer = answers.shift();
+        console.log(currentToAnswer);
+        firstTimeFlag = true;
+        $('#mainDisplay').removeClass('start');
+        break;
       case 38://up
+      case 87://w
         userPrediction = "number";
         checkAnswer(userPrediction);
         break;
       case 37://left
+      case 65://a
         userPrediction = "ping";
         checkAnswer(userPrediction);
         break;
       case 39://right
+      case 68://d
         userPrediction = "pong";
         checkAnswer(userPrediction);
         break;
       case 40://down
+      case 83://s
         userPrediction = "pingpong";
         checkAnswer(userPrediction);
         break;
