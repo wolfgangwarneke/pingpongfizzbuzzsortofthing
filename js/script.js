@@ -11,6 +11,15 @@ var counter;
 var livesLeft;
 var startTime;
 var finishTime;
+var completionTime;
+
+function getWithTheTime() {
+  var time = new Date();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+  return [minutes, seconds];
+}
+
 
 $(document).ready(function() {
 
@@ -35,6 +44,7 @@ $(document).ready(function() {
   $('.start').click(function() {
     points = 0;
     livesLeft = 4;
+    startTime = getWithTheTime();
     $('#livesLeft').text(livesLeft-1);
     $('#score').text(points);
     getAnswers(15, 3, 5);//first argument sets game length
@@ -111,7 +121,15 @@ $(document).ready(function() {
   }
 
   function winning() {
-    alert('You made it through! Congrats!')
+    finishTime = getWithTheTime();
+    if (startTime[0] > finishTime[0]) {
+      finishTime[0] += 60;
+    }
+    if (startTime[1] > finishTime[1]) {
+      finishTime[1] += 60;
+    }
+    completionTime = [finishTime[0]-startTime[0], finishTime[1]-startTime[1]]
+    alert('You made it through! Congrats! You completed the game in ' + completionTime[0] + " minutes and " + completionTime[1] + " seconds.");
   }
 
 
