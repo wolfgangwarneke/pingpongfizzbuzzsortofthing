@@ -26,7 +26,6 @@ $(document).ready(function() {
         answers.push(i);
       }
     }
-    // console.log(answers);
   };
 
   //start game
@@ -43,62 +42,65 @@ $(document).ready(function() {
   });
 
   //get input from controls
-  var userPrediction = "";
-  $('#numberButton').click(function() {
-    userPrediction = "number";
-    checkAnswer(userPrediction);
-  });
-  $('#pingButton').click(function() {
-    userPrediction = "ping";
-    checkAnswer(userPrediction);
-  });
-  $('#pongButton').click(function() {
-    userPrediction = "pong";
-    checkAnswer(userPrediction);
-  });
-  $('#pingpongButton').click(function() {
-    userPrediction = "pingpong";
-    checkAnswer(userPrediction);
-  });
+    var userPrediction = "";
+    $('#numberButton').click(function() {
+      userPrediction = "number";
+      checkAnswer(userPrediction);
+    });
+    $('#pingButton').click(function() {
+      userPrediction = "ping";
+      checkAnswer(userPrediction);
+    });
+    $('#pongButton').click(function() {
+      userPrediction = "pong";
+      checkAnswer(userPrediction);
+    });
+    $('#pingpongButton').click(function() {
+      userPrediction = "pingpong";
+      checkAnswer(userPrediction);
+    });
+
 
 
   //checkAnswer
   function checkAnswer(response) {
     if (!firstTimeFlag) {
-    answerJuggle = answers.shift();
-    answers = answers.splice(0);
-    if ((response === answerJuggle) || (response === typeof answerJuggle)) {
-      console.log('hey you are right');
-      points += pointsSystem[response];
-      $('#score').text(points);
-      $('#mainDisplay').text('yep.');
+      answerJuggle = answers.shift();
+      answers = answers.splice(0);
+      if ((response === answerJuggle) || (response === typeof answerJuggle)) {
+        console.log('hey you are right');
+        points += pointsSystem[response];
+        $('#score').text(points);
+        $('#mainDisplay').text('yep.');
+      } else {
+        livesLeft -= 1;
+        $('#livesLeft').text(livesLeft);
+        $('#mainDisplay').text('nah.');
+      }
+      $('#previous').text(answerJuggle);
     } else {
-      livesLeft -= 1;
-      $('#livesLeft').text(livesLeft);
-      $('#mainDisplay').text('nah.');
+      firstTimeFlag = false;
+      if ((response === currentToAnswer) || (response === typeof currentToAnswer)) {
+        console.log('hey you are right');
+        points += pointsSystem[response];
+        $('#score').text(points);
+        $('#mainDisplay').text('yep.');
+      } else {
+        // console.log('hmm that might be wrong there');
+        livesLeft -= 1;
+        $('#livesLeft').text(livesLeft);
+        $('#mainDisplay').text('nah.');
+      }
+      $('#previous').text(currentToAnswer);
     }
-    $('#previous').text(answerJuggle);
-  } else {
-    firstTimeFlag = false;
-    if ((response === currentToAnswer) || (response === typeof currentToAnswer)) {
-      console.log('hey you are right');
-      points += pointsSystem[response];
-      $('#score').text(points);
-      $('#mainDisplay').text('yep.');
-    } else {
-      // console.log('hmm that might be wrong there');
-      livesLeft -= 1;
-      $('#livesLeft').text(livesLeft);
-      $('#mainDisplay').text('nah.');
-
+    if (livesLeft === 0) {
+      endOfGame();
     }
-    $('#previous').text(currentToAnswer);
-  }
   }
 
-  //display next iteration
-
-
+  function endOfGame() {
+    alert('it is over now');
+  }
 
 
 ///tutorial section
