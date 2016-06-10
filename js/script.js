@@ -1,9 +1,13 @@
 var answers = [];
 var previousAnswer;
 var previousPrevious;
+var currentToAnswer;
 var answerJuggle;
+var answersCopy;
 var points;
 var pointsSystem = {number: 1, ping: 2, pong: 2, pingpong: 4};
+var firstTimeFlag;
+var counter;
 
 $(document).ready(function() {
 
@@ -21,6 +25,7 @@ $(document).ready(function() {
         answers.push(i);
       }
     }
+    // console.log(answers);
   };
 
   //start game
@@ -31,11 +36,11 @@ $(document).ready(function() {
     getAnswers(100, 3, 5);
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
+    firstTimeFlag = true;
   });
 
   //get input from controls
   var userPrediction = "";
-  var controlToggle = "";
   $('#numberButton').click(function() {
     userPrediction = "number";
     checkAnswer(userPrediction);
@@ -53,19 +58,37 @@ $(document).ready(function() {
     checkAnswer(userPrediction);
   });
 
+
   //checkAnswer
   function checkAnswer(response) {
+    if (!firstTimeFlag) {
     answerJuggle = answers.shift();
-    answers = answers.splice(1);
+    alert(answerJuggle);
+    answers = answers.splice(0);
     if ((response === answerJuggle) || (response === typeof answerJuggle)) {
       console.log('hey you are right');
       points += pointsSystem[response];
       $('#score').text(points);
-      $('#mainDisplay').text('yep.')
+      $('#mainDisplay').text('yep.');
     } else {
       console.log('hmm that might be wrong there');
-      $('#mainDisplay').text('nah.')
+      $('#mainDisplay').text('nah.');
     }
+    // $('#previousPrevious').text($('#previous').val());
+    $('#previous').text(answerJuggle);
+  } else {
+    firstTimeFlag = false;
+    if ((response === currentToAnswer) || (response === typeof currentToAnswer)) {
+      console.log('hey you are right');
+      points += pointsSystem[response];
+      $('#score').text(points);
+      $('#mainDisplay').text('yep.');
+    } else {
+      console.log('hmm that might be wrong there');
+      $('#mainDisplay').text('nah.');
+    }
+    $('#previous').text(currentToAnswer);
+  }
   }
 
   //display next iteration
