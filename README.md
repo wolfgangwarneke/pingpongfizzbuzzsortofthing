@@ -23,12 +23,7 @@ Display output sequence on new screen.
 Adds start tutorial text to accompany input to teach user how to use the game
 Example text: Welcome! Ping pong counts by ones, but the two multiples will change the number to "ping" or "pong".  If the number has both multiples it becomes both "ping" and "pong"... Pingpong! In arcade mode  of Ping Pong Pingpong you will navigate your way through the game by predicting whether the next number will actually be a number or whether it will change to "ping", "pong", "pingpong".  But don't get it wrong or you'll lose a life! (Don't worry you get 3.)
 
-Has comments annotating the outputted sequence to further demonstrate the concept for the user.
-example: See? Each red ping represent a multiple of three!
-
 Adds start menu with choices for tutorial or to play the game.
-
-Display  game content in an organized and scalable way for mobile devices.
 
 Assign click event to "Number", "Ping", "Pong", "Pingpong" buttons.
 example: clicking "Pong" will mean you are predicting the next sequence will be a multiple of 5
