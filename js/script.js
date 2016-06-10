@@ -9,6 +9,8 @@ var pointsSystem = {number: 1, ping: 2, pong: 2, pingpong: 4};
 var firstTimeFlag;
 var counter;
 var livesLeft;
+var startTime;
+var finishTime;
 
 $(document).ready(function() {
 
@@ -35,10 +37,11 @@ $(document).ready(function() {
     livesLeft = 4;
     $('#livesLeft').text(livesLeft-1);
     $('#score').text(points);
-    getAnswers(100, 3, 5);
+    getAnswers(15, 3, 5);//first argument sets game length
     currentToAnswer = answers.shift();
     console.log(currentToAnswer);
     firstTimeFlag = true;
+    $('.start').removeClass('start');
   });
 
   //get input from controls
@@ -96,12 +99,23 @@ $(document).ready(function() {
     if (livesLeft === 0) {
       endOfGame();
     }
+    if (answers.length < 1) {
+      winning();
+    }
   }
 
   function endOfGame() {
     $('#livesLeft').text(0);
+    startTime = "";
     alert('it is over now');
   }
+
+  function winning() {
+    alert('You made it through! Congrats!')
+  }
+
+
+
 
 
 ///tutorial section
