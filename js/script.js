@@ -73,7 +73,8 @@ $(document).ready(function() {
       $('#score').text(points);
       $('#mainDisplay').text('yep.');
     } else {
-      console.log('hmm that might be wrong there');
+      livesLeft -= 1;
+      $('#livesLeft').text(livesLeft);
       $('#mainDisplay').text('nah.');
     }
     $('#previous').text(answerJuggle);
