@@ -17,8 +17,13 @@ h1 {
 }
 
 /* home screen */
-#homePage {
+#homePage p {
+  font-family: "Jura", sans-serif;
+}
 
+#homePage h3 {
+  font-family: sans-serif;
+  font-weight: lighter;
 }
 
 #goTutorial, .playTheGame, #playAgain {
@@ -67,6 +72,20 @@ h1 {
   margin: 0 0 10px 0;
 }
 
+#scoreBar {
+  font-family: "Jura", sans-serif;
+  font-size: 2.4rem;
+}
+
+#scoreBar p span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+  #scoreBar {
+      font-size: 1.3rem;
+  }
+}
 /*'main display'*/
 #mainDisplay {
   display: inline-block;

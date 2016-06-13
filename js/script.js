@@ -163,7 +163,6 @@ $(document).ready(function() {
     $('#controls').toggleClass('hideControls');
     $('#livesLeft').text(0);
     startTime = "";
-    alert('it is over now');
     highScore();
     $('#endMessage h2').text('oh snap');
     $('#endPoints h2 span').text(points);
